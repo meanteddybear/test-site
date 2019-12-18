@@ -4,10 +4,11 @@
 <html>
 
 <head>
-    
+
     <title>My first web page</title>
     <link rel="stylesheet" href="styles/style.css">
     <!-- This is a comment, by the way -->
+    <!--[if IE]><link href="stupidie.css" rel="stylesheet"><![endif]-->
 
 </head>
 
@@ -36,53 +37,126 @@
 <h2>Where to find the tutorial</h2>
 <p><a href="http://www.htmldog.com"><img src="http://www.htmldog.com/badge1.gif" width="120" height="90" alt="HTML Dog"></a></p>
 
-<h3>Some random table</h3>
+  <h3>Some random table</h3>
+    <table>
+      <caption>Locust mating habits</caption>
+      <colgroup>
+          <col>
+          <col class="alternative">
+          <col>
+      </colgroup>
+      <tr>
+          <th>Column 1 heading</th>
+          <th>Column 2 heading</th>
+          <th>Column 3 heading</th>
+      </tr>
+      <tr>
+          <td>This</td>
+          <td>That</td>
+          <td>The other</td>
+      </tr>
+      <tr>
+          <td>Ladybird</td>
+          <td>Locust</td>
+          <td>Lunch</td>
+      </tr>
+    </table>
 
-<table>
-    <tr>
-        <th>Column 1 heading</th>
-        <th>Column 2 heading</th>
-        <th>Column 3 heading</th>
-    </tr>
-    <tr>
-        <td>Row 2, cell 1</td>
-        <td colspan="2">Row 2, cell 2, also spanning Row 2, cell 3</td>
-    </tr>
-    <tr>
-        <td rowspan="2">Row 3, cell 1, also spanning Row 4, cell 1</td>
-        <td>Row 3, cell 2</td>
-        <td>Row 3, cell 3</td>
-    </tr>
-    <tr>
-        <td>Row 4, cell 2</td>
-        <td>Row 4, cell 3</td>
-    </tr>
-</table>
+  <h3>Some random form</h3>
+  <p><strong>Note:</strong> It looks the part, but won't do a damned thing.</p>
+
+    <form action="somescript.php" method="post">
+
+      <p>Name:</p>
+      <p><input name="name" value="Your name"></p>
+
+      <p>Comments: </p>
+      <p><textarea rows="10" cols="20" name="comments">Your comments</textarea></p>
+
+      <p>Are you:</p>
+      <p><input type="radio" name="areyou" value="male"> Male</p>
+      <p><input type="radio" name="areyou" value="female"> Female</p>
+      <p><input type="radio" name="areyou" value="hermaphrodite"> An hermaphrodite</p>
+      <p><input type="radio" name="areyou" value="asexual" checked> Asexual</p>
+
+      <p><input type="submit"></p>
+    </form>
+
+    <form action="somescript.php" >
+      <fieldset>
+          <legend>Name</legend>
+          <p>First name <input name="firstName"></p>
+          <p>Last name <input name="lastName"></p>
+      </fieldset>
+      <fieldset>
+          <legend>Address</legend>
+          <p>Address <textarea name="address"></textarea></p>
+          <p>Postal code <input name="postcode"></p>
+      </fieldset>
+    </form>
+
+    <form>
+      <select name="country">
+        <optgroup label="Africa">
+            <option value="gam">Gambia</option>
+            <option value="mad">Madagascar</option>
+            <option value="nam">Namibia</option>
+        </optgroup>
+        <optgroup label="Europe">
+            <option value="fra">France</option>
+            <option value="rus">Russia</option>
+            <option value="uk">UK</option>
+        </optgroup>
+        <optgroup label="North America">
+            <option value="can">Canada</option>
+            <option value="mex">Mexico</option>
+            <option value="usa">USA</option>
+        </optgroup>
+      </select>
+    </form>
+
+  <br>
+  <input name="country" list="country_name">
+  <datalist id="country_name">
+      <option value="Afghanistan">
+      <option value="Albania">
+      <option value="Algeria">
+      <option value="Andorra">
+      <option value="Armenia">
+      <option value="Australia">
+      <option value="Austria">
+      <option value="Azerbaijan">
+      <!-- etc. -->
+  </datalist>
+  <br>
+  <video src="kitties.mp4" width="300" height="200" loop muted autoplay controls></video>
 
 
-<h3>Some random form</h3>
-<p><strong>Note:</strong> It looks the part, but won't do a damned thing.</p>
-
-<form action="somescript.php" method="post">
-
-<p>Name:</p>
-<p><input name="name" value="Your name"></p>
-
-<p>Comments: </p>
-<p><textarea rows="10" cols="20" name="comments">Your comments</textarea></p>
-
-<p>Are you:</p>
-<p><input type="radio" name="areyou" value="male"> Male</p>
-<p><input type="radio" name="areyou" value="female"> Female</p>
-<p><input type="radio" name="areyou" value="hermaphrodite"> An hermaphrodite</p>
-<p><input type="radio" name="areyou" value="asexual" checked> Asexual</p>
-
-<p><input type="submit"></p>
-
-</form>
+  <video src="kitties.mp4" poster="fluffy.jpg" controls></video>
 
 
-<p>If you add the line <code><var>givevaderachuckle</var> = true;</code> to the <code>destroy_planet</code> subroutine and then type <kbd>ilovejabba</kbd> into the console, the big bad green Death Star laser will etch <samp>Slug Lover!</samp> on the planet's surface.</p>
+  <video src="kitties.mp4" controls>
+      <img src="hahahaha.jpg" alt="Hilarious cat and caption saying 'soz'.">
+  </video>
+
+
+  <video src="kitties.mp4" controls>
+      <img src="hahahaha.jpg" alt="Hilarious cat and caption saying 'soz'.">
+  </video>
+
+
+  <audio src="meow_mix.mp3" controls>
+      Your stupid browser doesn't support HTML 5 audio.
+  </audio>
+
+
+  <canvas id="wittykitty" width="800" height="450">
+      <!-- Fall-back content here, just like with video and audio -->
+  </canvas>
+
+
+
+  <p>If you add the line <code><var>givevaderachuckle</var> = true;</code> to the <code>destroy_planet</code> subroutine and then type <kbd>ilovejabba</kbd> into the console, the big bad green Death Star laser will etch <samp>Slug Lover!</samp> on the planet's surface.</p>
 
 
 </body>
