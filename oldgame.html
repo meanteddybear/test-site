@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<head>
+    <style>
+    </style>
+</head>
+<body>
+    <script>
+    
+    let turn = 1;
+    let humanScore = 0;
+    let cpuScore = 0;
+    let special = "false";
+
+    game();
+
+    function game() {
+        for (turn = 1; turn < 6; turn++) {
+            result();
+        }
+        switch(true) {
+            case special == "true":
+                alert("Oh boy man, you really won hard. We have no more computers. \n We're back in teh dinosaur age.");
+                break;
+            case humanScore > cpuScore:
+                alert("Human Score:" + humanScore + "\nCpu Score:" + cpuScore + "\nHumans Win");
+                break;
+            case humanScore < cpuScore:
+                alert("Human Score:" + humanScore + "\nCpu Score:" + cpuScore+  "\nCPU Win");
+                break;
+            case humanScore == cpuScore:
+                alert("Human Score:" + humanScore + "\nCpu Score:" + cpuScore + "\nIt's a draw");
+                break;
+        }
+    }   
+
+    function getRandomInt() {
+        let integer = 3;
+            return Math.floor(Math.random() * Math.floor(integer));
+        }
+
+   function humanSelect() {
+        let option = "invalid";
+        while (option == "invalid") {
+            let select = prompt("Paper, Scissors or Rock? \nGame " + turn + " of 5 \n(Type 'Exit' to cancel)");
+            select = select.toLowerCase();
+            if (select == "paper" || select == "scissors" || select == "rock"|| select == "rock?") {
+                option = "valid";
+                return(select);
+            }
+            if (select == "exit") {
+                option = "valid"
+                return(select);
+            }
+            else {
+               alert("Invalid option, try again");
+            }
+        }
+    }
+
+    function cpuSelect() {
+        
+        switch(getRandomInt()) {
+            case 0:
+                alert("CPU selects paper");
+                break;
+            case 1:
+                alert("CPU selects scissors");
+                break;
+            case 2:
+                alert("CPU selects rock");
+                break;
+            default:
+                alert("Error");
+            }
+    }
+
+    function result() {
+        let human = humanSelect();
+        let cpu = getRandomInt(); 
+        switch(true) {
+        case human == "paper" && cpu == 0:
+            alert("You: Paper. \nCPU: Paper. \nIt's a draw");
+            break;
+        case human == "paper" && cpu == 1:
+            alert("You: Paper. \nCPU: Scissors. \nYou lose");
+            cpuScore = (cpuScore + 1);
+            break;
+        case human == "paper" && cpu == 2:
+            alert("You: Paper. \nCPU: Rock. \nYou win");
+            humanScore = (humanScore + 1);
+            break;
+        case human == "scissors" && cpu == 0:
+            alert("You: Scissors \nCPU: Paper. \nYou win");
+            humanScore = (humanScore + 1);
+            break;
+        case human == "scissors" && cpu == 1:
+            alert("You: scissors. \nCPU: Scissors. \nIt's a draw");
+            break;
+        case human == "scissors" && cpu == 2:
+            alert("You: scissors. \nCPU: Rock. \nYou lose");
+            cpuScore = (cpuScore + 1);
+            break;
+        case human == "rock" && cpu == 0:
+            alert("You: rock. \nCPU: paper. \nYou lose");
+            cpuScore = (cpuScore + 1);
+            break;
+        case human == "rock" && cpu == 1:
+            alert("You: rock. \nCPU: Scissors. \nYou win");
+            humanScore = (humanScore + 1);
+            break;
+        case human == "rock" && cpu == 2:
+            alert("You: rock. \nCPU: rock. \nIt's a draw");
+            break;
+        case human == "exit":
+            game = "off";
+            break;
+        case human == "rock?":
+            alert("100% calculated \n you found the easter egg and won the entire game... \n congrats?");
+            turn = 5;
+            humanScore = 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+            cpuScore = -1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+            special = "true";
+            break;
+        default:
+            alert("Oops, something's broken");
+            game = "off";
+            break;
+        }
+    }
+
+  
+    </script>
+</body>
+</html>
+
+<!--
